@@ -5,20 +5,6 @@ export function AboutSection() {
   return (
     <section id="about" className="py-20 lg:py-0 px-6 lg:px-12 xl:px-24 w-full">
       <div className="max-w-2xl mx-auto lg:mx-0 flex flex-col justify-center h-full">
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, margin: "-100px" }}
-          transition={{ duration: 0.5 }}
-          className="mb-12 text-center lg:text-left"
-        >
-          <h2 className="text-3xl md:text-4xl font-bold tracking-tight text-neutral-900 dark:text-white mb-4">
-            About Me
-          </h2>
-          <p className="text-lg text-neutral-600 dark:text-neutral-400">
-            Passionate about building scalable software and creating great user experiences.
-          </p>
-        </motion.div>
 
         <div className="flex flex-col gap-12">
           {/* Bio */}
