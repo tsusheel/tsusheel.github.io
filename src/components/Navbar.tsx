@@ -1,9 +1,10 @@
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { Menu, X, FileText, Mail } from "lucide-react";
+import { Menu, X, FileText, Mail, Sun, Moon } from "lucide-react";
 import { FaGithub as Github, FaLinkedin as Linkedin } from "react-icons/fa";
 import { cn } from "../utils/cn";
 import { portfolioData } from "../data/portfolio";
+import { useTheme } from "../context/ThemeContext";
 
 const navItems = [
   { name: "About", href: "#home" },
@@ -14,6 +15,7 @@ const navItems = [
 export function Navbar() {
   const [scrolled, setScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const { theme, toggleTheme } = useTheme();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -28,7 +30,7 @@ export function Navbar() {
       className={cn(
         "fixed top-0 w-full z-50 transition-all duration-300 border-b border-transparent",
         scrolled
-          ? "bg-white/80 backdrop-blur-md py-3 border-neutral-200 shadow-sm"
+          ? "bg-white/80 dark:bg-[#0A0A0A]/80 backdrop-blur-md py-3 border-neutral-200 dark:border-neutral-900 shadow-sm dark:shadow-none"
           : "bg-transparent py-5"
       )}
     >
@@ -39,9 +41,9 @@ export function Navbar() {
             e.preventDefault();
             window.scrollTo({ top: 0, behavior: "smooth" });
           }}
-          className="text-xl font-bold tracking-tighter text-neutral-900 group"
+          className="text-xl font-bold tracking-tighter text-neutral-900 dark:text-white group"
         >
-          <span className="text-neutral-400">PQR</span>ST<span className="text-red-500">.</span>
+          <span className="text-neutral-400 dark:text-neutral-600">PQR</span>ST<span className="text-red-500">.</span>
         </a>
 
         {/* Desktop Nav */}
@@ -57,7 +59,7 @@ export function Navbar() {
                       window.scrollTo({ top: 0, behavior: "smooth" });
                     }
                   }}
-                  className="text-sm font-medium text-neutral-600 hover:text-teal-600 transition-colors"
+                  className="text-sm font-medium text-neutral-600 dark:text-neutral-400 hover:text-teal-600 dark:hover:text-teal-400 transition-colors"
                 >
                   {item.name}
                 </a>
@@ -65,23 +67,30 @@ export function Navbar() {
             ))}
           </ul>
 
-          <div className="flex items-center gap-4 pl-6 border-l border-neutral-200">
-            <a href={portfolioData.contact.github} target="_blank" rel="noreferrer" className="text-neutral-500 hover:text-neutral-900 transition-colors">
+          <div className="flex items-center gap-4 pl-6 border-l border-neutral-200 dark:border-neutral-800">
+            <a href={portfolioData.contact.github} target="_blank" rel="noreferrer" className="text-neutral-500 hover:text-neutral-900 dark:hover:text-white transition-colors">
               <Github className="w-5 h-5" />
             </a>
-            <a href={portfolioData.contact.linkedin} target="_blank" rel="noreferrer" className="text-neutral-500 hover:text-[#0A66C2] transition-colors">
+            <a href={portfolioData.contact.linkedin} target="_blank" rel="noreferrer" className="text-neutral-500 hover:text-[#0A66C2] dark:hover:text-[#3b82f6] transition-colors">
               <Linkedin className="w-5 h-5" />
             </a>
-            <a href={`mailto:${portfolioData.contact.email}`} className="text-neutral-500 hover:text-teal-600 transition-colors">
+            <a href={`mailto:${portfolioData.contact.email}`} className="text-neutral-500 hover:text-teal-600 dark:hover:text-teal-400 transition-colors">
               <Mail className="w-5 h-5" />
             </a>
             <a
               href="#"
-              className="flex items-center gap-2 px-4 py-2 bg-neutral-900 hover:bg-neutral-800 text-white text-sm font-medium rounded-full transition-all active:scale-95 shadow-sm"
+              className="flex items-center gap-2 px-4 py-2 bg-neutral-900 dark:bg-white hover:bg-neutral-800 dark:hover:bg-neutral-100 text-white dark:text-neutral-900 text-sm font-medium rounded-full transition-all active:scale-95 shadow-sm"
             >
               <FileText className="w-4 h-4" />
               Resume
             </a>
+            <button
+              onClick={toggleTheme}
+              className="p-2 text-neutral-500 hover:text-teal-600 dark:hover:text-teal-400 hover:bg-neutral-100 dark:hover:bg-neutral-900 rounded-full transition-all"
+              aria-label="Toggle Theme"
+            >
+              {theme === "dark" ? <Moon className="w-5 h-5" /> : <Sun className="w-5 h-5" />}
+            </button>
           </div>
         </nav>
 
@@ -101,7 +110,7 @@ export function Navbar() {
             initial={{ opacity: 0, height: 0 }}
             animate={{ opacity: 1, height: "auto" }}
             exit={{ opacity: 0, height: 0 }}
-            className="md:hidden bg-white border-b border-neutral-200 overflow-hidden"
+            className="md:hidden bg-white dark:bg-[#0A0A0A] border-b border-neutral-200 dark:border-neutral-900 overflow-hidden"
           >
             <div className="px-6 py-4 flex flex-col gap-4">
               {navItems.map((item) => (
@@ -119,23 +128,29 @@ export function Navbar() {
                       setMobileMenuOpen(false);
                     }
                   }}
-                  className="text-lg font-medium text-neutral-700 hover:text-teal-600"
+                  className="text-lg font-medium text-neutral-700 dark:text-neutral-300 hover:text-teal-600 dark:hover:text-teal-400"
                 >
                   {item.name}
                 </a>
               ))}
-              <hr className="border-neutral-100" />
-              <div className="flex items-center gap-4 py-2">
-                <a href={portfolioData.contact.github} target="_blank" rel="noreferrer" className="p-2 bg-neutral-100 rounded-full text-neutral-700">
+              <hr className="border-neutral-100 dark:border-neutral-900" />
+              <div className="flex items-center flex-wrap gap-4 py-2">
+                <a href={portfolioData.contact.github} target="_blank" rel="noreferrer" className="p-2 bg-neutral-100 dark:bg-neutral-800 rounded-full text-neutral-700 dark:text-neutral-300">
                   <Github className="w-5 h-5" />
                 </a>
-                <a href={portfolioData.contact.linkedin} target="_blank" rel="noreferrer" className="p-2 bg-neutral-100 rounded-full text-neutral-700">
+                <a href={portfolioData.contact.linkedin} target="_blank" rel="noreferrer" className="p-2 bg-neutral-100 dark:bg-neutral-800 rounded-full text-neutral-700 dark:text-neutral-300">
                   <Linkedin className="w-5 h-5" />
                 </a>
-                <a href={`mailto:${portfolioData.contact.email}`} className="p-2 bg-neutral-100 rounded-full text-neutral-700">
+                <a href={`mailto:${portfolioData.contact.email}`} className="p-2 bg-neutral-100 dark:bg-neutral-800 rounded-full text-neutral-700 dark:text-neutral-300">
                   <Mail className="w-5 h-5" />
                 </a>
-                <a href="#" className="flex-1 text-center py-2 bg-neutral-900 text-white rounded-full font-medium">
+                <button
+                  onClick={toggleTheme}
+                  className="p-2 bg-neutral-100 dark:bg-neutral-800 rounded-full text-neutral-700 dark:text-neutral-300"
+                >
+                  {theme === "dark" ? <Moon className="w-5 h-5" /> : <Sun className="w-5 h-5" />}
+                </button>
+                <a href="#" className="flex-1 text-center py-2 bg-neutral-900 dark:bg-white text-white dark:text-neutral-900 rounded-full font-medium">
                   Resume
                 </a>
               </div>

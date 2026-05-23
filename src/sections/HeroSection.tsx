@@ -27,7 +27,7 @@ export function HeroSection() {
         className="flex flex-col items-center lg:items-start text-center lg:text-left max-w-2xl mx-auto lg:mx-0"
       >
         <motion.div variants={itemVariants} className="mb-8">
-          <div className="w-40 h-40 md:w-56 md:h-56 mx-auto lg:mx-0 rounded-full overflow-hidden border-4 border-white shadow-xl shadow-neutral-200/50 relative z-10 bg-white">
+          <div className="w-40 h-40 md:w-56 md:h-56 mx-auto lg:mx-0 rounded-full overflow-hidden border-4 border-white dark:border-[#0A0A0A] shadow-xl shadow-neutral-200/50 dark:shadow-none relative z-10 bg-white dark:bg-[#0A0A0A]">
             <img
               src="/profile.png"
               alt="Sushil Thakur Portrait"
@@ -38,14 +38,14 @@ export function HeroSection() {
 
         <motion.h1
           variants={itemVariants}
-          className="text-5xl md:text-6xl xl:text-7xl font-extrabold tracking-tight text-neutral-900 mb-6 text-balance"
+          className="text-5xl md:text-6xl xl:text-7xl font-extrabold tracking-tight text-neutral-900 dark:text-white mb-6 text-balance"
         >
           Hi, I'm <span className="md:whitespace-nowrap">{portfolioData.hero.name}</span>
         </motion.h1>
 
         <motion.p
           variants={itemVariants}
-          className="text-xl md:text-2xl text-neutral-600 mb-8 max-w-xl text-balance"
+          className="text-xl md:text-2xl text-neutral-600 dark:text-neutral-400 mb-8 max-w-xl text-balance"
         >
           {portfolioData.hero.role}
         </motion.p>
@@ -54,7 +54,7 @@ export function HeroSection() {
           <a
             href="/resume.pdf"
             download
-            className="px-8 py-3.5 bg-neutral-900 hover:bg-neutral-800 text-white rounded-full font-medium transition-all flex items-center gap-2 active:scale-95 shadow-md shadow-neutral-900/20"
+            className="px-8 py-3.5 bg-neutral-900 dark:bg-white hover:bg-neutral-800 dark:hover:bg-neutral-100 text-white dark:text-neutral-900 rounded-full font-medium transition-all flex items-center gap-2 active:scale-95 shadow-md shadow-neutral-900/20 dark:shadow-none"
           >
             Download Resume <Download className="w-4 h-4" />
           </a>

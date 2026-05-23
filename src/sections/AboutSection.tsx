@@ -12,10 +12,10 @@ export function AboutSection() {
           transition={{ duration: 0.5 }}
           className="mb-12 text-center lg:text-left"
         >
-          <h2 className="text-3xl md:text-4xl font-bold tracking-tight text-neutral-900 mb-4">
+          <h2 className="text-3xl md:text-4xl font-bold tracking-tight text-neutral-900 dark:text-white mb-4">
             About Me
           </h2>
-          <p className="text-lg text-neutral-600">
+          <p className="text-lg text-neutral-600 dark:text-neutral-400">
             Passionate about building scalable software and creating great user experiences.
           </p>
         </motion.div>
@@ -27,7 +27,7 @@ export function AboutSection() {
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true, margin: "-100px" }}
             transition={{ duration: 0.5 }}
-            className="prose prose-neutral prose-lg max-w-none text-neutral-600 text-center lg:text-left"
+            className="prose prose-neutral prose-lg max-w-none text-neutral-600 dark:text-neutral-400 text-center lg:text-left"
           >
             <p className="mb-6">{portfolioData.hero.intro}</p>
             <p>
@@ -46,12 +46,12 @@ export function AboutSection() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, margin: "-100px" }}
                 transition={{ duration: 0.5, delay: index * 0.1 }}
-                className="bg-white p-6 rounded-2xl border border-neutral-100 shadow-sm hover:shadow-md hover:border-teal-100 transition-all group text-center lg:text-left"
+                className="bg-white dark:bg-[#111111] p-6 rounded-2xl border border-neutral-100 dark:border-neutral-800 shadow-sm dark:shadow-none hover:shadow-md hover:border-teal-100 dark:hover:border-teal-900 transition-all group text-center lg:text-left"
               >
-                <h4 className="text-3xl font-bold text-neutral-900 mb-2 group-hover:text-teal-600 transition-colors">
+                <h4 className="text-3xl font-bold text-neutral-900 dark:text-white mb-2 group-hover:text-teal-600 dark:group-hover:text-teal-400 transition-colors">
                   {stat.value}
                 </h4>
-                <p className="text-sm font-medium text-neutral-500">{stat.label}</p>
+                <p className="text-sm font-medium text-neutral-500 dark:text-neutral-400">{stat.label}</p>
               </motion.div>
             ))}
           </div>
