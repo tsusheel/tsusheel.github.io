@@ -29,9 +29,11 @@ export function Navbar() {
     <header
       className={cn(
         "fixed top-0 w-full z-50 transition-all duration-300 border-b border-transparent",
-        scrolled
-          ? "bg-white/80 dark:bg-[#0A0A0A]/80 backdrop-blur-md py-3 border-neutral-200 dark:border-neutral-900 shadow-sm dark:shadow-none"
-          : "bg-transparent py-5"
+        mobileMenuOpen
+          ? "bg-white dark:bg-[#0A0A0A] py-3 border-neutral-200 dark:border-neutral-900 shadow-sm dark:shadow-none"
+          : scrolled
+            ? "bg-white/80 dark:bg-[#0A0A0A]/80 backdrop-blur-md py-3 border-neutral-200 dark:border-neutral-900 shadow-sm dark:shadow-none"
+            : "bg-transparent py-5"
       )}
     >
       <div className="max-w-6xl mx-auto px-6 flex items-center justify-between">
@@ -96,7 +98,7 @@ export function Navbar() {
 
         {/* Mobile Menu Toggle */}
         <button
-          className="md:hidden block p-2 text-neutral-600 relative z-50"
+          className="md:hidden block p-2 text-neutral-600 dark:text-neutral-400 hover:text-neutral-900 dark:hover:text-white transition-colors relative z-50"
           onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
         >
           {mobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
