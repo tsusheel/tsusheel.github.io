@@ -1,5 +1,6 @@
 import { Mail } from "lucide-react";
 import { FaGithub as Github, FaLinkedin as Linkedin } from "react-icons/fa";
+import { FaXTwitter as XIcon } from "react-icons/fa6";
 import { portfolioData } from "../data/portfolio";
 
 export function Footer() {
@@ -9,12 +10,17 @@ export function Footer() {
     <footer className="border-t border-neutral-200 dark:border-neutral-900 bg-white dark:bg-[#0A0A0A] py-12 text-center text-neutral-600 dark:text-neutral-400">
       <div className="max-w-6xl mx-auto px-6">
         <div className="mb-8 flex justify-center gap-6">
-          <a href={portfolioData.contact.github} className="hover:text-teal-600 dark:hover:text-teal-400 transition-colors">
+          <a href={portfolioData.contact.github} target="_blank" rel="noreferrer" className="hover:text-teal-600 dark:hover:text-teal-400 transition-colors">
             <Github className="w-5 h-5" />
           </a>
-          <a href={portfolioData.contact.linkedin} className="hover:text-teal-600 dark:hover:text-teal-400 transition-colors">
+          <a href={portfolioData.contact.linkedin} target="_blank" rel="noreferrer" className="hover:text-teal-600 dark:hover:text-teal-400 transition-colors">
             <Linkedin className="w-5 h-5" />
           </a>
+          {portfolioData.contact.x && (
+            <a href={portfolioData.contact.x} target="_blank" rel="noreferrer" className="hover:text-teal-600 dark:hover:text-teal-400 transition-colors">
+              <XIcon className="w-5 h-5" />
+            </a>
+          )}
           <a href={`mailto:${portfolioData.contact.email}`} className="hover:text-teal-600 dark:hover:text-teal-400 transition-colors">
             <Mail className="w-5 h-5" />
           </a>

@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Menu, X, FileText, Mail, Sun, Moon } from "lucide-react";
 import { FaGithub as Github, FaLinkedin as Linkedin } from "react-icons/fa";
+import { FaXTwitter as XIcon } from "react-icons/fa6";
 import { cn } from "../utils/cn";
 import { portfolioData } from "../data/portfolio";
 import { useTheme } from "../context/ThemeContext";
@@ -77,6 +78,11 @@ export function Navbar() {
             <a href={portfolioData.contact.linkedin} target="_blank" rel="noreferrer" className="text-neutral-500 hover:text-[#0A66C2] dark:hover:text-[#3b82f6] transition-colors">
               <Linkedin className="w-5 h-5" />
             </a>
+            {portfolioData.contact.x && (
+              <a href={portfolioData.contact.x} target="_blank" rel="noreferrer" className="text-neutral-500 hover:text-neutral-900 dark:hover:text-white transition-colors">
+                <XIcon className="w-5 h-5" />
+              </a>
+            )}
             <a href={`mailto:${portfolioData.contact.email}`} className="text-neutral-500 hover:text-teal-600 dark:hover:text-teal-400 transition-colors">
               <Mail className="w-5 h-5" />
             </a>
@@ -145,6 +151,11 @@ export function Navbar() {
                 <a href={portfolioData.contact.linkedin} target="_blank" rel="noreferrer" className="p-2 bg-neutral-100 dark:bg-neutral-800 rounded-full text-neutral-700 dark:text-neutral-300">
                   <Linkedin className="w-5 h-5" />
                 </a>
+                {portfolioData.contact.x && (
+                  <a href={portfolioData.contact.x} target="_blank" rel="noreferrer" className="p-2 bg-neutral-100 dark:bg-neutral-800 rounded-full text-neutral-700 dark:text-neutral-300">
+                    <XIcon className="w-5 h-5" />
+                  </a>
+                )}
                 <a href={`mailto:${portfolioData.contact.email}`} className="p-2 bg-neutral-100 dark:bg-neutral-800 rounded-full text-neutral-700 dark:text-neutral-300">
                   <Mail className="w-5 h-5" />
                 </a>

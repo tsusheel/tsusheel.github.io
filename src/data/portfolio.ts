@@ -80,6 +80,7 @@ export const portfolioData = {
     email: "hello@tsusheel.com",
     website: "tsusheel.com",
     github: "https://github.com/tsusheel",
-    linkedin: "https://linkedin.com/in/tsusheel"
+    linkedin: "https://linkedin.com/in/tsusheel",
+    x: "https://x.com/oyesusheel"
   }
 };
