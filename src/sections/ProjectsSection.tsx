@@ -48,7 +48,7 @@ export function ProjectsSection() {
               </div>
 
               {/* Title */}
-              <h3 className="text-lg font-bold text-neutral-900 dark:text-white mb-2 group-hover:text-teal-600 dark:group-hover:text-teal-400 transition-colors duration-300">
+              <h3 className="text-lg font-bold text-neutral-900 dark:text-white mb-2 transition-colors duration-300">
                 {project.title}
               </h3>
 

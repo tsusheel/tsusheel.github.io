@@ -34,7 +34,7 @@ export function AboutSection() {
                 transition={{ duration: 0.5, delay: index * 0.1 }}
                 className="bg-white dark:bg-[#111111] p-6 rounded-2xl border border-neutral-100 dark:border-neutral-800 shadow-sm dark:shadow-none hover:shadow-md hover:border-teal-100 dark:hover:border-teal-900 transition-all group text-center lg:text-left"
               >
-                <h4 className="text-3xl font-bold text-neutral-900 dark:text-white mb-2 group-hover:text-teal-600 dark:group-hover:text-teal-400 transition-colors">
+                <h4 className="text-3xl font-bold text-neutral-900 dark:text-white mb-2 transition-colors">
                   {stat.value}
                 </h4>
                 <p className="text-sm font-medium text-neutral-500 dark:text-neutral-400">{stat.label}</p>
