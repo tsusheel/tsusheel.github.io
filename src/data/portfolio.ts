@@ -49,15 +49,15 @@ export const portfolioData = {
       technologies: [".NET", "SQL Server", "JavaScript", "Bootstrap"],
       image: "https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?q=80&w=800&auto=format&fit=crop",
       github: "https://github.com",
-      live: "https://example.com"
+      docs: "https://example.com/docs"
     },
     {
-      title: "Search Platform Integration",
-      description: "Integrated Typesense-powered search experience with optimized search performance and filtering.",
-      technologies: ["Typesense", "InstantSearch.js", ".NET"],
+      title: "Typesense Search Integrator",
+      description: "A React wrapper for Typesense search integrations, providing hook-based querying and instant component filters.",
+      technologies: ["TypeScript", "React", "Typesense", "NPM"],
       image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=800&auto=format&fit=crop",
       github: "https://github.com",
-      live: "https://example.com"
+      npm: "https://www.npmjs.com"
     },
     {
       title: "Customer Support Platform",
@@ -65,7 +65,8 @@ export const portfolioData = {
       technologies: ["Agora SDK", "JavaScript", ".NET"],
       image: "https://images.unsplash.com/photo-1553877522-43269d4ea984?q=80&w=800&auto=format&fit=crop",
       github: "https://github.com",
-      live: "https://example.com"
+      live: "https://example.com",
+      docs: "https://example.com/docs"
     }
   ],
   skills: {
