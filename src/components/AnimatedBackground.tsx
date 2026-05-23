@@ -1,6 +1,16 @@
+import { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 
 export function AnimatedBackground() {
+  const [isMobile, setIsMobile] = useState(true);
+
+  useEffect(() => {
+    const checkMobile = () => setIsMobile(window.innerWidth < 768);
+    checkMobile();
+    window.addEventListener("resize", checkMobile);
+    return () => window.removeEventListener("resize", checkMobile);
+  }, []);
+
   return (
     <div className="absolute inset-0 z-0 overflow-hidden pointer-events-none">
       {/* Existing Teal Background Glow */}
@@ -8,7 +18,7 @@ export function AnimatedBackground() {
 
       {/* Big #e8ddd0 abstract hovering circle */}
       <motion.div
-        animate={{
+        animate={isMobile ? {} : {
           y: [0, -30, 0],
           x: [0, 20, 0],
           scale: [1, 1.05, 1],
@@ -23,7 +33,7 @@ export function AnimatedBackground() {
       
       {/* A secondary filled shape for balance */}
       <motion.div
-        animate={{
+        animate={isMobile ? {} : {
           y: [0, 40, 0],
           rotate: [0, 180, 360],
         }}
