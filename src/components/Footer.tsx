@@ -20,11 +20,15 @@ export function Footer() {
           </a>
         </div>
         <p className="mb-2 font-medium text-neutral-900 dark:text-white">
-          ST<span className="text-red-500">.</span> {portfolioData.hero.name}
+          <span className="text-neutral-400 dark:text-neutral-600">PQR</span><span className="text-red-500">.</span> {portfolioData.hero.name}
         </p>
         <p className="text-sm text-neutral-500 dark:text-neutral-400">
-          &copy; {currentYear}. Built with React & Tailwind CSS.
+          &copy; {currentYear} Built with React
         </p>
+        <div className="mt-6 text-xs text-neutral-400 dark:text-neutral-500 italic max-w-xs mx-auto">
+          <p className="mb-1">You miss 100% of the shots you don’t take.</p>
+          <p className="text-[10px] not-italic text-neutral-500 dark:text-neutral-600 font-medium">~ <strike>Wayne Gretzky</strike> Michael Scott</p>
+        </div>
       </div>
     </footer>
   );
