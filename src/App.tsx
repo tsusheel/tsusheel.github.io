@@ -26,8 +26,8 @@ function App() {
           </div>
         </div>
 
-        <ExperienceSection />
         <ProjectsSection />
+        <ExperienceSection />
       </main>
       <Footer />
     </div>

@@ -36,12 +36,6 @@ export function HeroSection() {
           </div>
         </motion.div>
 
-        <motion.div variants={itemVariants} className="mb-6">
-          <span className="px-4 py-2 rounded-full bg-white border border-teal-200 text-teal-700 text-sm font-semibold shadow-sm">
-            Available for new opportunities
-          </span>
-        </motion.div>
-
         <motion.h1
           variants={itemVariants}
           className="text-5xl md:text-6xl xl:text-7xl font-extrabold tracking-tight text-neutral-900 mb-6 text-balance"
