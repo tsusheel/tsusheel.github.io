@@ -32,7 +32,7 @@ export function Navbar() {
       className={cn(
         "fixed top-0 w-full z-50 transition-all duration-300 border-b border-transparent",
         mobileMenuOpen
-          ? "bg-white dark:bg-[#0A0A0A] py-3 border-neutral-200 dark:border-neutral-900 shadow-sm dark:shadow-none"
+          ? "bg-white dark:bg-[#0A0A0A] pt-3 pb-0 border-neutral-200 dark:border-neutral-900 shadow-sm dark:shadow-none"
           : scrolled
             ? "bg-white/80 dark:bg-[#0A0A0A]/80 backdrop-blur-md py-3 border-neutral-200 dark:border-neutral-900 shadow-sm dark:shadow-none"
             : "bg-transparent py-5"
@@ -121,7 +121,7 @@ export function Navbar() {
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -12 }}
             transition={{ duration: 0.2, ease: "easeOut" }}
-            className="md:hidden bg-white dark:bg-[#0A0A0A] border-b border-neutral-200 dark:border-neutral-900 overflow-hidden"
+            className="md:hidden bg-white dark:bg-[#0A0A0A] overflow-hidden"
           >
             <div className="px-6 py-4 flex flex-col gap-4">
               {navItems.map((item) => (
