@@ -1,10 +1,16 @@
+import { useState } from "react";
 import { motion } from "framer-motion";
 import { Section } from "../components/Section";
 import { portfolioData } from "../data/portfolio";
-import { ExternalLink, Package, BookOpen } from "lucide-react";
+import { ExternalLink, Package, BookOpen, ChevronDown, ChevronUp } from "lucide-react";
 import { FaGithub as Github } from "react-icons/fa";
 
 export function ProjectsSection() {
+  const [showAll, setShowAll] = useState(false);
+  const initialLimit = 3;
+  const hasMore = portfolioData.projects.length > initialLimit;
+  const visibleProjects = showAll ? portfolioData.projects : portfolioData.projects.slice(0, initialLimit);
+
   return (
     <Section
       id="projects"
@@ -13,13 +19,16 @@ export function ProjectsSection() {
       className="bg-neutral-50/30 dark:bg-transparent"
     >
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
-        {portfolioData.projects.map((project, index) => (
+        {visibleProjects.map((project, index) => (
           <motion.div
             key={project.title}
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, margin: "-50px" }}
-            transition={{ duration: 0.5, delay: index * 0.1 }}
+            transition={{ 
+              duration: 0.5, 
+              delay: (index >= initialLimit ? (index - initialLimit) : index) * 0.1 
+            }}
             className="flex flex-col h-full bg-white dark:bg-[#111111] border border-neutral-100 dark:border-neutral-800/80 rounded-3xl overflow-hidden shadow-sm dark:shadow-none hover:shadow-xl dark:hover:shadow-[0_0_30px_-10px_rgba(20,184,166,0.1)] hover:border-teal-500/20 dark:hover:border-teal-400/20 transition-all duration-300 group"
           >
             {/* Image container */}
@@ -115,6 +124,25 @@ export function ProjectsSection() {
           </motion.div>
         ))}
       </div>
+
+      {hasMore && (
+        <div className="flex justify-center mt-12">
+          <button
+            onClick={() => setShowAll(!showAll)}
+            className="inline-flex items-center gap-2 px-6 py-3 border border-neutral-200 dark:border-neutral-800 rounded-full text-sm font-semibold text-neutral-700 dark:text-neutral-300 hover:text-neutral-900 dark:hover:text-white hover:border-neutral-300 dark:hover:border-neutral-700 bg-transparent transition-all shadow-sm active:scale-95 duration-200 hover:bg-neutral-50 dark:hover:bg-neutral-900/40 cursor-pointer"
+          >
+            {showAll ? (
+              <>
+                Show Less <ChevronUp className="w-4 h-4" />
+              </>
+            ) : (
+              <>
+                Show More <ChevronDown className="w-4 h-4" />
+              </>
+            )}
+          </button>
+        </div>
+      )}
     </Section>
   );
 }
