@@ -1,6 +1,7 @@
 import { motion } from "framer-motion";
 import type { ReactNode } from "react";
 import { cn } from "../utils/cn";
+import { useIsMobile } from "../utils/useIsMobile";
 
 interface SectionProps {
   id: string;
@@ -11,12 +12,14 @@ interface SectionProps {
 }
 
 export function Section({ id, className, children, title, subtitle }: SectionProps) {
+  const isMobile = useIsMobile();
+
   return (
     <section id={id} className={cn("py-12 md:py-20 scroll-mt-16", className)}>
       <div className="max-w-6xl mx-auto px-6">
         {(title || subtitle) && (
           <motion.div
-            initial={{ opacity: 0, y: 20 }}
+            initial={isMobile ? false : { opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, amount: 0.1 }}
             transition={{ duration: 0.5 }}

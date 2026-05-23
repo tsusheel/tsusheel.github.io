@@ -1,8 +1,10 @@
 import { motion } from "framer-motion";
 import { Section } from "../components/Section";
 import { portfolioData } from "../data/portfolio";
+import { useIsMobile } from "../utils/useIsMobile";
 
 export function ExperienceSection() {
+  const isMobile = useIsMobile();
   return (
     <Section
       id="experience"
@@ -14,7 +16,7 @@ export function ExperienceSection() {
           {portfolioData.experience.map((exp, index) => (
             <motion.div
               key={index}
-              initial={{ opacity: 0, y: 10 }}
+              initial={isMobile ? false : { opacity: 0, y: 10 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, amount: 0.1 }}
               transition={{ duration: 0.4, delay: index * 0.1 }}

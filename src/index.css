@@ -59,4 +59,9 @@
     background-image: linear-gradient(to right, #1f1f1f 1px, transparent 1px),
       linear-gradient(to bottom, #1f1f1f 1px, transparent 1px);
   }
+
+  .disable-transitions * {
+    transition: none !important;
+    animation: none !important;
+  }
 }

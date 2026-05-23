@@ -1,7 +1,9 @@
 import { motion } from "framer-motion";
 import { portfolioData } from "../data/portfolio";
+import { useIsMobile } from "../utils/useIsMobile";
 
 export function AboutSection() {
+  const isMobile = useIsMobile();
   return (
     <section id="about" className="py-20 lg:py-0 px-6 lg:px-12 xl:px-24 w-full">
       <div className="max-w-2xl mx-auto lg:mx-0 flex flex-col justify-center h-full">
@@ -9,7 +11,7 @@ export function AboutSection() {
         <div className="flex flex-col gap-12">
           {/* Bio */}
           <motion.div
-            initial={{ opacity: 0, x: 20 }}
+            initial={isMobile ? false : { opacity: 0, x: 20 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true, amount: 0.1 }}
             transition={{ duration: 0.5 }}
@@ -28,7 +30,7 @@ export function AboutSection() {
             {portfolioData.stats.map((stat, index) => (
               <motion.div
                 key={stat.label}
-                initial={{ opacity: 0, y: 20 }}
+                initial={isMobile ? false : { opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, amount: 0.1 }}
                 transition={{ duration: 0.5, delay: index * 0.1 }}

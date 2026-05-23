@@ -4,9 +4,11 @@ import { Section } from "../components/Section";
 import { portfolioData } from "../data/portfolio";
 import { ExternalLink, Package, BookOpen, ChevronDown, ChevronUp } from "lucide-react";
 import { FaGithub as Github } from "react-icons/fa";
+import { useIsMobile } from "../utils/useIsMobile";
 
 export function ProjectsSection() {
   const [showAll, setShowAll] = useState(false);
+  const isMobile = useIsMobile();
   const initialLimit = 3;
   const hasMore = portfolioData.projects.length > initialLimit;
   const visibleProjects = showAll ? portfolioData.projects : portfolioData.projects.slice(0, initialLimit);
@@ -22,7 +24,7 @@ export function ProjectsSection() {
         {visibleProjects.map((project, index) => (
           <motion.div
             key={project.title}
-            initial={{ opacity: 0, y: 20 }}
+            initial={isMobile ? false : { opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, amount: 0.1 }}
             transition={{ 

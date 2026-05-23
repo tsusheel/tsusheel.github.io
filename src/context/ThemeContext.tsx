@@ -22,12 +22,25 @@ export function ThemeProvider({ children }: { children: React.ReactNode }) {
 
   useEffect(() => {
     const root = document.documentElement;
+    
+    // Disable transitions temporarily to prevent lag/jerking
+    root.classList.add('disable-transitions');
+    
     if (theme === 'dark') {
       root.classList.add('dark');
     } else {
       root.classList.remove('dark');
     }
     localStorage.setItem('theme', theme);
+    
+    // Force layout reflow to apply styling immediately
+    window.getComputedStyle(root).opacity;
+    
+    const timeout = setTimeout(() => {
+      root.classList.remove('disable-transitions');
+    }, 0);
+    
+    return () => clearTimeout(timeout);
   }, [theme]);
 
   const toggleTheme = () => {
