@@ -27,7 +27,7 @@ export function Footer() {
         </p>
         <div className="mt-6 text-xs text-neutral-400 dark:text-neutral-500 italic max-w-xs mx-auto">
           <p className="mb-1">You miss 100% of the shots you don’t take.</p>
-          <p className="text-[10px] not-italic text-neutral-500 dark:text-neutral-600 font-medium">~ <strike>Wayne Gretzky</strike> Michael Scott</p>
+          <p className="text-[10px] not-italic text-neutral-500 dark:text-neutral-600 font-medium">~ <span className="line-through">Wayne Gretzky</span> Michael Scott</p>
         </div>
       </div>
     </footer>
