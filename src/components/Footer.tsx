@@ -23,7 +23,7 @@ export function Footer() {
           <span className="text-neutral-400 dark:text-neutral-600">PQR</span><span className="text-red-500">.</span> {portfolioData.hero.name}
         </p>
         <p className="text-sm text-neutral-500 dark:text-neutral-400">
-          &copy; {currentYear} Built with React
+          &copy; {currentYear} | tsusheel
         </p>
         <div className="mt-6 text-xs text-neutral-400 dark:text-neutral-500 italic max-w-xs mx-auto">
           <p className="mb-1">You miss 100% of the shots you don’t take.</p>
