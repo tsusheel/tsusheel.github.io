@@ -19,13 +19,21 @@
 
 @layer base {
   :root {
-    --background: 0 0% 98%; /* Very light grey/white background */
-    --foreground: 240 10% 15%; /* Dark grey text for readability */
+    --background: 0 0% 100%; /* bg-white */
+    --foreground: 240 10% 15%; /* text-neutral-900 */
     --card: 0 0% 100%;
     --card-foreground: 240 10% 15%;
     --border: 240 5.9% 90%;
     --ring: 240 5.9% 90%;
     --radius: 0.75rem;
+  }
+
+  .dark {
+    --background: 0 0% 3.9%; /* bg-neutral-950 or #0A0A0A */
+    --foreground: 0 0% 98%; /* text-neutral-100 */
+    --card: 0 0% 6.7%; /* dark card #111111 */
+    --card-foreground: 0 0% 98%;
+    --border: 0 0% 14.9%; /* border-neutral-800 */
   }
 
   body {
@@ -34,6 +42,7 @@
     font-family: var(--font-sans);
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
+    transition: background-color 0.3s ease, color 0.3s ease;
   }
 }
 
