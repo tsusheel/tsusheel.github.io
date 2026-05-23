@@ -16,7 +16,7 @@ export function ExperienceSection() {
               key={index}
               initial={{ opacity: 0, y: 10 }}
               whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, margin: "-50px" }}
+              viewport={{ once: true, amount: 0.1 }}
               transition={{ duration: 0.4, delay: index * 0.1 }}
               className="py-4 flex flex-col md:flex-row gap-1 md:gap-4 border-b border-neutral-100 dark:border-neutral-800 group hover:bg-neutral-50/50 dark:hover:bg-[#111111] transition-colors -mx-4 px-4 sm:mx-0 sm:px-0 sm:hover:bg-transparent dark:sm:hover:bg-transparent"
             >

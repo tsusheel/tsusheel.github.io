@@ -11,7 +11,7 @@ export function AboutSection() {
           <motion.div
             initial={{ opacity: 0, x: 20 }}
             whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true, margin: "-100px" }}
+            viewport={{ once: true, amount: 0.1 }}
             transition={{ duration: 0.5 }}
             className="prose prose-neutral prose-lg max-w-none text-neutral-600 dark:text-neutral-400 text-center lg:text-left"
           >
@@ -30,7 +30,7 @@ export function AboutSection() {
                 key={stat.label}
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true, margin: "-100px" }}
+                viewport={{ once: true, amount: 0.1 }}
                 transition={{ duration: 0.5, delay: index * 0.1 }}
                 className="bg-white dark:bg-[#111111] p-6 rounded-2xl border border-neutral-100 dark:border-neutral-800 shadow-sm dark:shadow-none hover:shadow-md hover:border-teal-100 dark:hover:border-teal-900 transition-all group text-center lg:text-left"
               >
