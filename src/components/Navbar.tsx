@@ -6,7 +6,7 @@ import { FaXTwitter as XIcon } from "react-icons/fa6";
 import { cn } from "../utils/cn";
 import { portfolioData } from "../data/portfolio";
 import { useTheme } from "../context/ThemeContext";
-import { getResumeFileName } from "../utils/resume";
+import { downloadResume, RESUME_URL } from "../utils/resume";
 
 const navItems = [
   { name: "About", href: "#home" },
@@ -87,8 +87,13 @@ export function Navbar() {
               <Mail className="w-5 h-5" />
             </a>
             <a
-              href="/resume.pdf"
-              download={getResumeFileName()}
+              href={RESUME_URL}
+              onClick={(e) => {
+                e.preventDefault();
+                downloadResume();
+              }}
+              target="_blank"
+              rel="noopener noreferrer"
               className="flex items-center gap-2 px-4 py-2 bg-neutral-900 dark:bg-white hover:bg-neutral-800 dark:hover:bg-neutral-100 text-white dark:text-neutral-900 text-sm font-medium rounded-full transition-all active:scale-95 shadow-sm"
             >
               <FileText className="w-4 h-4" />
@@ -167,8 +172,13 @@ export function Navbar() {
                   {theme === "dark" ? <Moon className="w-5 h-5" /> : <Sun className="w-5 h-5" />}
                 </button>
                 <a 
-                  href="/resume.pdf" 
-                  download={getResumeFileName()}
+                  href={RESUME_URL} 
+                  onClick={(e) => {
+                    e.preventDefault();
+                    downloadResume();
+                  }}
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="flex-1 text-center py-2 bg-neutral-900 dark:bg-white text-white dark:text-neutral-900 rounded-full font-medium"
                 >
                   Resume

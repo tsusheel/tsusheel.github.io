@@ -1,7 +1,7 @@
 import { motion } from "framer-motion";
 import { Download } from "lucide-react";
 import { portfolioData } from "../data/portfolio";
-import { getResumeFileName } from "../utils/resume";
+import { downloadResume, RESUME_URL } from "../utils/resume";
 
 export function HeroSection() {
   const containerVariants = {
@@ -53,8 +53,13 @@ export function HeroSection() {
 
         <motion.div variants={itemVariants} className="flex flex-wrap justify-center lg:justify-start gap-4">
           <a
-            href="/resume.pdf"
-            download={getResumeFileName()}
+            href={RESUME_URL}
+            onClick={(e) => {
+              e.preventDefault();
+              downloadResume();
+            }}
+            target="_blank"
+            rel="noopener noreferrer"
             className="px-8 py-3.5 bg-neutral-900 dark:bg-white hover:bg-neutral-800 dark:hover:bg-neutral-100 text-white dark:text-neutral-900 rounded-full font-medium transition-all flex items-center gap-2 active:scale-95 shadow-md shadow-neutral-900/20 dark:shadow-none"
           >
             Download Resume <Download className="w-4 h-4" />
