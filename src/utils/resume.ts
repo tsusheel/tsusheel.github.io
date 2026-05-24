@@ -1,4 +1,6 @@
-export const RESUME_URL = "https://cdn.tsusheel.com/resume/latest.pdf";
+import { CDN_URL } from "../data/portfolio";
+
+export const RESUME_URL = `${CDN_URL}/resume/latest.pdf`;
 
 export function getResumeFileName(): string {
   const currentDate = new Date();

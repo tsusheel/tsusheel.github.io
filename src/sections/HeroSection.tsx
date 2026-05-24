@@ -30,7 +30,7 @@ export function HeroSection() {
         <motion.div variants={itemVariants} className="mb-8">
           <div className="w-40 h-40 md:w-56 md:h-56 mx-auto lg:mx-0 rounded-full overflow-hidden border-4 border-white dark:border-[#0A0A0A] shadow-xl shadow-neutral-200/50 dark:shadow-none relative z-10 bg-white dark:bg-[#0A0A0A]">
             <img
-              src="/profile.png"
+              src={portfolioData.hero.avatar}
               alt="Sushil Thakur Portrait"
               className="w-full h-full object-cover"
             />
