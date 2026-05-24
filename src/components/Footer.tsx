@@ -11,8 +11,8 @@ export function Footer() {
       <div className="max-w-6xl mx-auto px-6">
         <p className="text-xs text-neutral-500 dark:text-neutral-400 mb-6">
           Say hello at{" "}
-          <a 
-            href={`mailto:${portfolioData.contact.email}`} 
+          <a
+            href={`mailto:${portfolioData.contact.email}`}
             className="font-medium text-neutral-800 dark:text-neutral-200 hover:text-teal-600 dark:hover:text-teal-400 transition-colors"
           >
             {portfolioData.contact.email}
@@ -34,9 +34,6 @@ export function Footer() {
             <Mail className="w-5 h-5" />
           </a>
         </div>
-        <p className="mb-2 font-medium text-neutral-900 dark:text-white">
-          <span className="text-neutral-400 dark:text-neutral-600">PQR</span><span className="text-red-500">.</span> {portfolioData.hero.name}
-        </p>
         <p className="text-sm text-neutral-500 dark:text-neutral-400">
           &copy; {currentYear} | tsusheel
         </p>
