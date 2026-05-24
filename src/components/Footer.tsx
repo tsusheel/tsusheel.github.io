@@ -9,6 +9,15 @@ export function Footer() {
   return (
     <footer className="border-t border-neutral-200 dark:border-neutral-900 bg-white dark:bg-[#0A0A0A] py-12 text-center text-neutral-600 dark:text-neutral-400">
       <div className="max-w-6xl mx-auto px-6">
+        <p className="text-xs text-neutral-500 dark:text-neutral-400 mb-6">
+          Say hello at{" "}
+          <a 
+            href={`mailto:${portfolioData.contact.email}`} 
+            className="font-medium text-neutral-800 dark:text-neutral-200 hover:text-teal-600 dark:hover:text-teal-400 transition-colors"
+          >
+            {portfolioData.contact.email}
+          </a>
+        </p>
         <div className="mb-8 flex justify-center gap-6">
           <a href={portfolioData.contact.github} target="_blank" rel="noreferrer" className="hover:text-teal-600 dark:hover:text-teal-400 transition-colors">
             <Github className="w-5 h-5" />
