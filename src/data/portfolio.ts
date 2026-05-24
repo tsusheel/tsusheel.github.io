@@ -5,7 +5,7 @@ export const portfolioData = {
     name: "Sushil Thakur",
     role: "Full Stack Developer building scalable web applications and modern digital experiences.",
     intro: "I am a passionate software engineer specializing in enterprise-grade applications. With a strong foundation in both frontend aesthetics and backend architecture, I transform complex requirements into elegant, high-performance solutions.",
-    avatar: `${CDN_URL}/profile/avatar.png`,
+    avatar: `${CDN_URL}/profile/avatar.webp`,
   },
   stats: [
     { label: "Years Experience", value: "4+" },
