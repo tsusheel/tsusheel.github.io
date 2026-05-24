@@ -12,18 +12,28 @@ export const portfolioData = {
   ],
   experience: [
     {
-      company: "Wipro",
-      role: "Senior Project Engineer",
-      duration: "2021 - Present",
-      description: "Worked on enterprise applications and integrations using webMethods and modern web technologies. Built scalable solutions, APIs, internal tools, and frontend systems.",
-      technologies: ["webMethods", "React", "JavaScript", "Node.js", "SQL", ".NET"]
+      company: "Scaleeasy Inc.",
+      role: "Technical Lead",
+      location: "Toronto, Canada (Remote)",
+      duration: "July 2024 - Present",
+      description: "Improved application performance and reliability by fixing critical issues, building new frontend/backend features, and integrating GrapeJS for customizable pharmacy email templates.",
+      technologies: [".NET", "GCP", "Azure", "JavaScript", "Bootstrap", "Docker", "HTML", "CSS"]
     },
     {
-      company: "Scaleeasy Inc",
-      role: "Full Stack Developer",
-      duration: "2019 - 2021",
-      description: "Worked on full stack applications, realtime systems, integrations, UI/UX improvements, and scalable frontend architecture.",
-      technologies: ["React", "Node.js", "Tailwind", "Typesense", "Agora", "SQL"]
+      company: "Wipro Pvt. Ltd.",
+      role: "Senior Project Engineer",
+      location: "Pune, Maharashtra",
+      duration: "August 2021 - July 2024",
+      description: "Supported enterprise applications, delivered enhancements and fixes, collaborated with business teams, and automated reporting workflows to improve operational efficiency.",
+      technologies: ["webMethods", "Linux", "Java", "JavaScript", "Oracle SQL", "AWS"]
+    },
+    {
+      company: "Transformation Formula",
+      role: "Frontend Web Developer (Intern)",
+      location: "Himachal Pradesh (Remote)",
+      duration: "2020 (3 Months)",
+      description: "Designed and implemented a web portfolio for an FMCG brand using Figma, React, Node.js, Express.js, and CSS.",
+      technologies: ["React", "Express.js", "Node.js", "JavaScript", "HTML", "CSS", "Figma"]
     }
   ],
   projects: [
